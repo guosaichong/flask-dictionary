@@ -47,9 +47,10 @@ input#submit:hover{
     }
 }
 #footer {
-    background: #bbcae4;
+    background:linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+    background-size: 400%;
     height: 100px;
-    margin: 10px auto;
+    animation: sun 16s infinite;
     }
 .from{
     margin-top:10px;
