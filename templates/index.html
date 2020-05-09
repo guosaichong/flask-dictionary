@@ -28,29 +28,13 @@
             <hr>
             <li><b>单词：</b>{{w.word}}&nbsp;&nbsp;<a href="{{url_for('delete_word',delete_word=w.word)}}"><span><img src="\static\image\删除0_25.png" alt="删除" title="删除"/></span></a>
             </li>
-            <li><b>音标：</b>
-                
-                {{w.IPA}}&nbsp;&nbsp;<a target="_blank" href="http://dict.youdao.com/dictvoice?audio={{w.word}}&type=1"><span><img class="but" src="\static\image\小喇叭4_23x19.png" alt="发音" title="发音"/></span></a>
-                
-                
+            <li><b>音标：</b>{{w.IPA}}&nbsp;&nbsp;<a target="_blank" href="http://dict.youdao.com/dictvoice?audio={{w.word}}&type=1"><span><img class="but" src="\static\image\小喇叭4_23x19.png" alt="发音" title="发音"/></span></a>
             </li>
-            <li><b>释义：</b>
-                
-                {{w.paraphrase}}
-                
-                
+            <li><b>释义：</b>{{w.paraphrase}}
             </li>
-            <li><b>例句：</b>
-                
-                {{w.example_sentence}}
-                
-                
+            <li><b>例句：</b>{{w.example_sentence}}
             </li>
-            <li><b>其它：</b>
-                
-                {{w.other}}
-                
-                
+            <li><b>其它：</b>{{w.other}}
             </li>
             {%endfor%}
             </ul> 

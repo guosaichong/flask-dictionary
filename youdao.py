@@ -32,7 +32,7 @@ def get_data(keyword):
         example_sentence2_str  += i
     # print(example_sentence2_str.strip())
     # print(other.strip())
-    data_list.extend([word,IPA,istr.strip(),example_sentence1.strip(),example_sentence2_str.strip(),other.strip()])
+    data_list.extend([word.strip(),IPA.strip(),istr.strip(),example_sentence1.strip(),example_sentence2_str.strip(),other.strip()])
     # print(data_list)
     # print(len(data_list))
     return data_list
