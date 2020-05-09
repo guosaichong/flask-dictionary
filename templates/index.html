@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="static/image/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="static/common.css">
+    <script src="static/common.js"></script>
+    <title>查询</title>
+        
+    </head>
+    <body>
+    <div id="header"></div>
+    <div id="body">
+        <div class="from">
+            <form method="POST">
+            {{form.csrf_token()}}
+            {{form.word.label}}{{form.word}}
+            {{form.submit}}<br>
+            {%for message in get_flashed_messages()%}
+            {{message}}
+            {%endfor%} 
+            </form>
+        </div>
+        <div class="words">
+            <ul>
+            
+            {%for w in words%}
+            <hr>
+            <li><b>单词：</b>{{w.word}}&nbsp;&nbsp;<a href="{{url_for('delete_word',delete_word=w.word)}}"><span><img src="\static\image\删除0_25.png" alt="删除" title="删除"/></span></a>
+            </li>
+            <li><b>音标：</b>
+                
+                {{w.IPA}}&nbsp;&nbsp;<a target="_blank" href="http://dict.youdao.com/dictvoice?audio={{w.word}}&type=1"><span><img class="but" src="\static\image\小喇叭4_23x19.png" alt="发音" title="发音"/></span></a>
+                
+                
+            </li>
+            <li><b>释义：</b>
+                
+                {{w.paraphrase}}
+                
+                
+            </li>
+            <li><b>例句：</b>
+                
+                {{w.example_sentence}}
+                
+                
+            </li>
+            <li><b>其它：</b>
+                
+                {{w.other}}
+                
+                
+            </li>
+            {%endfor%}
+            </ul> 
+        </div>
+    </div>
+
+    <div id="footer">
+
+    </div>
+    </body>
+</html>
