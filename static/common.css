@@ -3,13 +3,21 @@
     padding: 0;
 }
 #header {
+    top:0px;
+    position: fixed;
+    
+    width: 100%;
+    z-index: 9999;
     height: 100px;
     background:linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
     background-size: 400%;
-    margin-bottom: 10px;
     animation: sun 16s infinite;
+    text-align: center;
+    line-height:100px;
 }
 #body {
+    top:100px;
+    position: relative;
     width: 960px;
     color: #000;
     background: #fff;
@@ -47,19 +55,27 @@ input#submit:hover{
     }
 }
 #footer {
+    position: relative;
+    top:100px;
+    width: 100%;
     background:linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
     background-size: 400%;
     height: 100px;
     animation: sun 16s infinite;
+    text-align: center;
+    line-height:100px;
     }
 .from{
-    margin-top:10px;
-    margin-left: 10px;
-    height:100%;
+    position: fixed;
+    overflow-y:auto;
+    z-index: 9999;
+    background-color: #fff;
+    padding-top: 5px;
+    height:40px;
     width:960px;
 }
 .words {
-    margin:10px;
+    padding-top:45px ;
     height:100%;
     width:100%;
 }
