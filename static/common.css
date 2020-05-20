@@ -23,6 +23,7 @@
     background: #fff;
     margin: auto;
     height: 100%;
+    min-height: 700px;
     font-family: Georgia, Palatino, serif;
     }
 label{
