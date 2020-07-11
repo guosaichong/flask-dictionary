@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}登录{% endblock %}
+{% block content %}
+
+
+<div class="login-box-body">
+    <div class="title">
+        <h2>英语单词练习</h2>
+    </div>
+    <form method="post" class="form-group" id="formLogin">
+        {{ form.hidden_tag() }}
+        <p>
+            用户名：<br>
+            {{ form.username(size=20,id='username',onfocus="this.placeholder=''",onblur="this.placeholder='请输入用户名!'",autocomplete="off") }}
+
+        </p>
+        <p>
+            密&nbsp;&nbsp;&nbsp;码：<br>
+            {{ form.password(size=20,id='password',onfocus="this.placeholder=''",onblur="this.placeholder='请输入密码!'",autocomplete="new-password")}}
+
+        </p>
+        {%for message in get_flashed_messages()%}
+        <p style="color: red">{{message}}</p>
+        {%endfor%}
+
+        <p>{{ form.submit(size=20) }}</p>
+    </form>
+</div>
+
+
+
+{% endblock %}
