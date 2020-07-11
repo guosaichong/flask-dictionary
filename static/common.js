@@ -6,12 +6,4 @@ function js_method(word){
     child.innerHTML=str;
     child.remove();
 }
-function checkValidate(){
-    var onAccount=document.getElementById('account');
-    var accountErr=document.getElementById("accountErr");
-    onAccount.onblur=function(){
-        if(isNaN(Number(oInp.value))){
-            alert('不是数字！')
-        }
-    }
-}
+

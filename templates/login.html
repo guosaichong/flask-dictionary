@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% block title %}登录{% endblock %}
 {% block content %}
-
+<script>
+    $(document).ready(function(){
+    $("#username").focus(function(){
+      $("#msg").hide();
+    });
+  });
+</script>
 
 <div class="login-box-body">
     <div class="title">
@@ -20,7 +26,7 @@
 
         </p>
         {%for message in get_flashed_messages()%}
-        <p style="color: red">{{message}}</p>
+        <p id="msg" style="color: red">{{message}}</p>
         {%endfor%}
 
         <p>{{ form.submit(size=20) }}</p>
