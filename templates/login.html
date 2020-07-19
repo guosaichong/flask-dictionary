@@ -5,8 +5,11 @@
     $(document).ready(function(){
     $("#username").focus(function(){
       $("#msg").hide();
+      $("#tip").css("display", "block")
+    }).blur(function(){
+        $("#tip").css("display", "none")
     });
-  });
+  })
 </script>
 
 <div class="login-box-body">
@@ -20,11 +23,13 @@
             {{ form.username(size=20,id='username',onfocus="this.placeholder=''",onblur="this.placeholder='请输入用户名!'",autocomplete="off") }}
 
         </p>
+        <p id="tip" style="display: none;">6～18个字符，可使用字母、数字、下划线，需要以字母开头</p>
         <p>
             密&nbsp;&nbsp;&nbsp;码：<br>
             {{ form.password(size=20,id='password',onfocus="this.placeholder=''",onblur="this.placeholder='请输入密码!'",autocomplete="new-password")}}
 
         </p>
+        
         {%for message in get_flashed_messages()%}
         <p id="msg" style="color: red">{{message}}</p>
         {%endfor%}

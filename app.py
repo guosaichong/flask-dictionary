@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, redirect, flash, request
 from sqlalchemy.sql.expression import func, select
-from youdao import get_data
+from utils import youdao
 import requests
 from config import engine
 from models import Dictionary, User
@@ -73,7 +73,7 @@ def index():
         else:
 
             try:
-                paraph = get_data(input_word)
+                paraph = youdao.get_data(input_word)
                 new_word = Dictionary(
                     word=paraph[0], IPA=paraph[1], paraphrase=paraph[2], example_sentence=paraph[3]+paraph[4], other=paraph[5])
                 session.add(new_word)

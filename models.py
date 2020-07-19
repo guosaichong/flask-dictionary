@@ -2,7 +2,6 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Text, DateTime, UniqueConstraint, Index
 import datetime
 # from config import engine
-import uuid
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 # from sqlalchemy.orm import sessionmaker
